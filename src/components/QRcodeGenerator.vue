@@ -40,7 +40,12 @@ export default {
   },
   methods: {
     generate: function() {
-      this.targetText.push(this.inputText);
+      const flag = this.targetText.some(value => value==this.inputText);
+      if(flag != true){
+        this.targetText.push(this.inputText);
+      }else{
+        alert("生成済みです");
+      }
     }
   }
 };
