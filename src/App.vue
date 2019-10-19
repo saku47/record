@@ -4,7 +4,7 @@
       <Header></Header>
       <Aside></Aside>
       <div class="content-wrapper">
-        
+        <router-view />
       </div>
       <Footer></Footer>
     </div>
