@@ -2,19 +2,17 @@
 <header class="main-header">
     <!-- Logo -->
     <a href="index2.html" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg"><b>R</b>ecord</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
+      </div>
+      <div class="logout">
+        <a href="index2.html" class="logo">
+      <span class="logo-lg">ログアウト</span>
+    </a>
       </div>
     </nav>
   </header>
@@ -24,3 +22,25 @@ export default {
   name: 'Header'
 }
 </script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+h3 {
+  margin: 40px 0 0;
+}
+
+
+.logout {
+  float: right;
+  margin-right: 20px;
+}
+
+.container {
+  width: 120px;
+  background: white;
+  color: black;
+  box-direction: none;
+}
+
+</style>
+
