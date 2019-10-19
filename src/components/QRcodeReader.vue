@@ -4,6 +4,12 @@
 
     <p class="decode-result">Last result: <b>{{ result }}</b></p>
 
+    <ul>
+      <li v-for="item in list" :key="item.id">
+        <b>{{item}}</b>
+      </li>
+    </ul>
+
     <qrcode-stream class="QRcodeReader" @decode="onDecode" @init="onInit" />
   </div>
 </template>
@@ -18,6 +24,7 @@ export default {
   data () {
     return {
       result: '',
+      list: [],
       error: ''
     }
   },
@@ -25,6 +32,13 @@ export default {
   methods: {
     onDecode (result) {
       this.result = result
+      const flag = this.list.some(value => value == result)
+      if(!flag){
+        this.list.push(result)
+      }
+      else{
+        alert("読み込み済み")
+      }
     },
 
     async onInit (promise) {
