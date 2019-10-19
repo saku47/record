@@ -3,7 +3,9 @@
     <div class="wrapper">
       <Header></Header>
       <Aside></Aside>
-      <div class="content-wrapper"></div>
+      <div class="content-wrapper">
+        <router-view />
+      </div>
       <Footer></Footer>
     </div>
   </div>
