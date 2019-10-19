@@ -11,17 +11,10 @@
       </div>
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu tree" data-widget="tree">
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-files-o"></i>
-            <span>マイページ</span>
+         <li>
+          <a href="pages/widgets.html">
+            <i class="fa fa-files-o"></i> <span> <router-link to="/">マイページ</router-link></span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-            <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-            <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
-          </ul>
         </li>
         <li class="treeview">
           <a href="#">
@@ -32,17 +25,22 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html">ユーザ一覧</a></li>
-            <li><a href="pages/charts/morris.html">デバイス一覧</a></li>
+            <li><router-link to="/devicelist">デバイス一覧</router-link></li>
+            <li><a href="pages/charts/morris.html">ユーザ一覧</a></li>
           </ul>
         </li>
-        <li>
-          <a href="pages/widgets.html">
-            <i class="fa fa-th"></i> <span>Widgets</span>
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span>履歴一覧</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-green">new</small>
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
+          <ul class="treeview-menu">
+            <li><router-link to="/allhistory">全ての履歴</router-link></li>
+            <li><a href="pages/charts/chartjs.html">デバイス履歴</a></li>
+          </ul>
         </li>
        </ul>
     </section>
@@ -57,7 +55,7 @@ export default {
 </script>
 <style scoped>
 h3 {
-  margin: 40px 0 0;
+  margin: 40px 40px;
   color: white;
 }
 </style>
