@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Dashbord from './components/Dashbord'
 import Users from './components/Users'
-import QRcode_reader from './components/QRcode_reader'
+import QRcodeReader from './components/QRcodeReader'
 
 Vue.use(Router)
 
@@ -20,9 +20,9 @@ export default new Router({
             component: Users
         },
         {
-            path: '/QRcode_reader',
-            name: 'QRcode_reader',
-            component: QRcode_reader
+            path: '/QRcodeReader',
+            name: 'QRcodeReader',
+            component: QRcodeReader
         }
 
     ]

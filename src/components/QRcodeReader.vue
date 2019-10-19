@@ -1,10 +1,10 @@
 <template>
-  <div class="QRcode_reader">
+  <div class>
     <p class="error">{{ error }}</p>
 
     <p class="decode-result">Last result: <b>{{ result }}</b></p>
 
-    <qrcode-stream @decode="onDecode" @init="onInit" />
+    <qrcode-stream class="QRcodeReader" @decode="onDecode" @init="onInit" />
   </div>
 </template>
 
@@ -54,5 +54,9 @@ export default {
 .error {
   font-weight: bold;
   color: red;
+}
+.QRcodeReader {
+  width: 300px;
+  height: 300px;
 }
 </style>
