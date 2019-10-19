@@ -8,6 +8,7 @@
     <ul v-if="targetText">
       <li v-for="text in targetText" :key="text.id">
         <p>{{text}}</p>
+        <input type="button" @click="delete_qrcode(text.id)" value="削除">
         <vue-qrcode value="text" :options="option" tag="img"></vue-qrcode>
       </li>
 
@@ -46,6 +47,9 @@ export default {
       }else{
         alert("生成済みです");
       }
+    },
+    delete_qrcode: function(index){
+      this.targetText.splice(index, 1);
     }
   }
 };
