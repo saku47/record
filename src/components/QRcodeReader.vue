@@ -4,16 +4,16 @@
 
     <qrcode-stream class="QRcodeReader" @decode="onDecode" @init="onInit" />
     <div class="box">
-      <table class="table table-hover">
-        <thead>
+      <table class="table">
+        <thead class="scrollHead">
           <tr>
             <th scope="col">デバイス名</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="scrollBody">
           <tr v-for="(item, index) in list" :key="item.id">
-            <td>{{item}}</td>
-            <td>
+            <td class="name">{{item}}</td>
+            <td class="button">
               <button type="button" class="btn btn-danger" @click="deleteItem(index)">削除</button>
             </td>
           </tr>
@@ -84,5 +84,34 @@ export default {
   width: 300px;
   height: 300px;
   margin: 10px auto;
+}
+
+.box {
+  width: 60%;
+}
+
+/*スクロール用*/
+thead.scrollHead,
+tbody.scrollBody {
+  display: block;
+}
+tbody.scrollBody {
+  overflow-y: scroll;
+  height: 200px;
+}
+
+.table {
+  margin: 0;
+}
+
+.name {
+  width: 80%;
+}
+
+.button {
+  display: block;
+  width: 20%;
+  margin: 0 0 0 auto;
+  float: right;
 }
 </style>
