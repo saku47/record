@@ -6,6 +6,7 @@ import QRcodeReader from './components/QRcodeReader'
 import AllHistory from './components/AllHistory'
 import DeviceList from './components/DeviceList'
 import QRcodeGenerator from './components/QRcodeGenerator'
+import Returndevice from './components/Returndevice'
 
 
 Vue.use(Router)
@@ -27,7 +28,7 @@ export default new Router({
             path: '/QRcodeReader',
             name: 'QRcodeReader',
             component: QRcodeReader
-        }, 
+        },
         {
             path: '/allhistory',
             name: 'AllHistory',
@@ -37,6 +38,11 @@ export default new Router({
             path: '/devicelist',
             name: 'DeviceList',
             component: DeviceList
+        },
+        {
+            path: '/returndevice',
+            name: 'Returndevice',
+            component: Returndevice
         },
         {
             path: '/QRcodeGenerator',

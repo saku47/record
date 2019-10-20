@@ -19,7 +19,7 @@
           </tr>
         </tbody>
       </table>
-      <button @click="borrow()">決定</button>
+      <button @click="return_device()">決定</button>
     </div>
   </div>
 </template>
@@ -64,29 +64,22 @@ export default {
     deleteItem: function(index) {
       this.list.splice(index, 1);
     },
-    borrow: function() {
-      const borrowAt = new Date();
+    return_device: function() {
+      //const returnAt = new Date();
 
       //貸出フラグ
       this.list.forEach(function(id) {
-        const history = db.collection("history").doc();
-
-        history.set({
-          borrowAt: borrowAt,
-          returnAt: "",
-          device: id,
-          user: "6xaUuRCJ2wPPU2uy0iQi"
-        });
+        //     const array = this.devices;
+        //   const hisi = array.find(p => p.id == id);
 
         db.collection("devices")
           .doc(id)
           .update({
-            borrow: true,
-            history: history
+            borrow: false
           });
       });
 
-      alert("借りれました．");
+      alert("返しました．");
       this.list = [];
     },
 
