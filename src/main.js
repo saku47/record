@@ -6,7 +6,7 @@ import router from './router' //追加
 import 'va/lib/css'
 import 'va/lib/script'
 
-//
+//firebase
 import './firebase'
 
 Vue.config.productionTip = false
@@ -16,27 +16,4 @@ new Vue({
   render: h => h(App),
 }).$mount('#app')
 
-new Vue({
-  el: '.l-wrapper',
 
-  data() {
-    return {
-      isModalActive: false,
-    }
-  },
-  methods: {
-    /**
-    * clickイベントが発火されたタイミングで、 
-    * オーバーレイコンテンツを表示するフラグを持つdata(isModalActive)を切り替える
-    */
-    openItem() {
-      this.toggleModal();
-    },
-    /**
-    * active状態を切り替える。
-    */
-    toggleModal() {
-      this.isModalActive = !this.isModalActive;
-    },
-  }
-});

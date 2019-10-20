@@ -6,6 +6,7 @@ import QRcodeReader from './components/QRcodeReader'
 import AllHistory from './components/AllHistory'
 import DeviceList from './components/DeviceList'
 import QRcodeGenerator from './components/QRcodeGenerator'
+import LendingStatus from './components/LendingStatus'
 import Returndevice from './components/Returndevice'
 
 
@@ -40,14 +41,21 @@ export default new Router({
             component: DeviceList
         },
         {
-            path: '/returndevice',
-            name: 'Returndevice',
-            component: Returndevice
-        },
-        {
             path: '/QRcodeGenerator',
             name: 'QRcodeGenerator',
             component: QRcodeGenerator
         },
+        {
+            path: '/LendingStatus',
+            name: 'LendingStatus',
+            component: LendingStatus
+        },
+        {
+            path: '/returndevice',
+            name: 'Returndevice',
+            component: Returndevice
+        }
+
+
     ]
 })

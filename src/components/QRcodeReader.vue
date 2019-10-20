@@ -1,5 +1,6 @@
 <template>
-  <div class>
+  <div>
+    <h1>貸出</h1>
     <p class="error">{{ error }}</p>
 
     <qrcode-stream class="QRcodeReader" @decode="onDecode" @init="onInit" />
@@ -74,8 +75,8 @@ export default {
         history.set({
           borrowAt: borrowAt,
           returnAt: "",
-          device: id,
-          user: "6xaUuRCJ2wPPU2uy0iQi"
+          device: db.collection("devices").doc(id),
+          user: db.collection("users").doc("6xaUuRCJ2wPPU2uy0iQi")
         });
 
         db.collection("devices")

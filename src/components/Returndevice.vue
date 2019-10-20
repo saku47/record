@@ -1,7 +1,7 @@
 <template>
-  <div class>
+  <div>
+    <h1>返却</h1>
     <p class="error">{{ error }}</p>
-
     <qrcode-stream class="QRcodeReader" @decode="onDecode" @init="onInit" />
     <div class="box">
       <table class="table">
@@ -36,7 +36,8 @@ export default {
       result: "",
       list: [],
       error: "",
-      devices: []
+      devices: [],
+      device_name: []
     };
   },
   created() {
@@ -56,6 +57,12 @@ export default {
       const flag = this.list.some(value => value == result);
       if (!flag) {
         this.list.push(result);
+        /*this.devices.forEach(function(device) {
+          if (device.id == result) {
+            this.device_name.push(this.device.name);
+          }
+        });
+        */
       } else {
         alert("読み込み済み");
       }
