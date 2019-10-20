@@ -3,23 +3,23 @@
     <p class="error">{{ error }}</p>
 
     <qrcode-stream class="QRcodeReader" @decode="onDecode" @init="onInit" />
-
-    <table>
-      <thead>
-        <tr>
-          <th>デバイス名</th>
-          <th>×</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="item in list" :key="item.id">
-          <td>{{item}}</td>
-          <td>
-            <button type="button" class="btn btn-danger">削除</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="box">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">デバイス名</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(item, index) in list" :key="item.id">
+            <td>{{item}}</td>
+            <td>
+              <button type="button" class="btn btn-danger" @click="deleteItem(index)">削除</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 
@@ -46,6 +46,10 @@ export default {
       } else {
         alert("読み込み済み");
       }
+    },
+
+    deleteItem: function(index) {
+      this.list.splice(index, 1);
     },
 
     async onInit(promise) {
@@ -79,5 +83,6 @@ export default {
 .QRcodeReader {
   width: 300px;
   height: 300px;
+  margin: 10px auto;
 }
 </style>
